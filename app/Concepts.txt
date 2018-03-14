@@ -1,0 +1,2 @@
+
+1) ng-src  ---> It delays the requesting of image until angular has a chance to replace ng-src text with the actual url of the image.
