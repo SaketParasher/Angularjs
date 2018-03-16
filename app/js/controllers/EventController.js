@@ -1,7 +1,8 @@
 'use strict';
 
 eventsApp.controller('EventController',function EventController($scope){
-    
+    $scope.sortorder = 'name';
+    $scope.query = '';
     $scope.event = {
         name:'Angular Bootcamp',
         date:'01/01/2019',
@@ -16,7 +17,7 @@ eventsApp.controller('EventController',function EventController($scope){
             {
                 name:'Directive Masterclass',
                 creator:'Bob Smith',
-                duration:'1 Hour',
+                duration:1,
                 level:'Advanced',
                 abstract:'In this session you will learn in and outs of Directives.',
                 upVoteCnt:5
@@ -24,7 +25,7 @@ eventsApp.controller('EventController',function EventController($scope){
             {
                 name:'Scope for Fun and Profit',
                 creator:'Bob Marley',
-                duration:'2 Hour',
+                duration:2,
                 level:'Intermediate',
                 abstract:'In this session you will learn about nG Scope service.',
                 upVoteCnt:0
@@ -32,7 +33,7 @@ eventsApp.controller('EventController',function EventController($scope){
             {
                 name:'Well Behaved Controllers',
                 creator:'Ahuja Wallia',
-                duration:'30 mins',
+                duration:3,
                 level:'Introductory',
                 abstract:'Control the Controllers functionality and behaviour',
                 upVoteCnt:0

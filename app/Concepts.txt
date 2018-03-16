@@ -1,2 +1,28 @@
 
-1) ng-src  ---> It delays the requesting of image until angular has a chance to replace ng-src text with the actual url of the image.
+/***********************************************       DIRECTIVES       ******************************************/
+
+1) ng-src       ---> It delays the requesting of image until angular has a chance to replace ng-src text with the actual url of the image.
+2) ng-change    ---> It executes each time input field value is changed but ng-model must be present on that input field.
+3) ng-bind      ---> used as an alernative to expression binding ie. we can use ng-bind="event.name" instead of {{event.name}}
+4) ng-bind-html ---> used to populate content of an element ie. a tag <> with the value of a variable .
+                     ie. ng-bind-html="snippet" . html content of this tag will be replaced by html value of snippet variable.
+5) ng-cloak     ---> hide a portion or all page until angular resolves all the bindings and expressions otherwise we will get a flash of bindings.
+6) ng-style     ---> ng-style='varName' and varName is attached to scope in controller which contains css like object.
+7) ng-class     ---> ng-class="className" . add the style on className in css file.
+
+8) ng-disabled  ---> ng-disabled="value" element will be disabled or enabled based on the value which comes from controller.
+9) ng-submit    ---> ng-submit="function()" will call the function() when the form is submitted.
+10) ngNonBindable--> will not bind the expression and will print the same expression as it is.
+
+** Never update DOM from controller do it by using directives. 
+
+/***********************************************       FILTERS       ******************************************/
+
+1) uppercase
+2) lowercase
+3) number , currency  3.147855 | number:2(two decimal places)  o/p--> 3.14
+4) date     :- pass milliseconds | date:'medium' 
+5) json     :- prints the data in json format
+6) orderBy  :- orders the dataset in a particular sequence based on the parameter passed.
+7) limitTo  :- limits the records to a certain number
+8) filter   :- filters a dataset by an expression

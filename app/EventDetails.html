@@ -77,11 +77,33 @@
             
     <!--   ----------   -------------------   SESSION MODAL POPUP   ---------------------- ------------   *************   -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
+                    <div style="display:flex">
+                        <fieldset style="flex-basis:50%">
+                            <label>ORDERBY :-</label>
+                            <select ng-model="sortorder">
+                                <option value="name">Name</option>
+                                <option value="-upVoteCnt">Votes</option>
+                            </select>
+                        </fieldset>
+
+                        <fieldset style="flex-basis:50%">
+                            <label>FILTERBY :-</label>
+                            <select ng-model="query">
+                                <option value="">All</option>
+                                <option value="Advanced">Advanced</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Introductory">Introductory</option>
+                            </select>
+                        </fieldset>
+                        
+                    </div>
+                    
                 
                     
-                 <div ng-repeat="session in event.sessions">
+                 <div ng-repeat="session in event.sessions | orderBy:sortorder | filter:query">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">{{session.name}}</h5>
                           <p class="modal-title">{{session.creator}}</p>
@@ -94,7 +116,7 @@
                           
                       </div>
                       <div class="modal-body"  style="display:flex;flex-wrap:wrap">
-                          <p style="flex-basis:47%"><strong>Duration:</strong> {{session.duration}}</p>
+                          <p style="flex-basis:47%"><strong>Duration:</strong> {{session.duration | durationFilter}}</p>
                           <p style="flex-basis:47%"><strong>Level:</strong> {{session.level}}</p>
                           <div style="flex-basis:6%">
                               <div  ng-click='upVoteCnt(session)' style="cursor:pointer;display:flex;justify-content:center;align-items: flex-end"><i class="fas fa-2x fa-angle-up"></i></div>
@@ -121,6 +143,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers/EventController.js"></script>
+        <script src="js/filters.js"></script>
     </body>
     
 
