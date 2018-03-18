@@ -16,3 +16,19 @@ input:focus {outline:0;}
     padding-bottom: 0.3rem;
     padding-top: 0.3rem;
 }
+#createEventForm fieldset{ 
+    display: inline-block;
+    width: 50%;
+    padding: 1% 0 1% 0;
+}
+#createEventForm fieldset label{ 
+    display: inline-block;
+    width: 25%;
+    float: left;
+}
+#createEventForm fieldset input{ 
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding:0.2%;
+}

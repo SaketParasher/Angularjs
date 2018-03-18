@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang="en" ng-app="eventsApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Event Registration</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css"> 
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    
+    <body>
+        
+        <div class="container" ng-controller="EditEventController" ng-cloak>
+        
+<!-- ------------------------------------   NAVBAR  STARTS  ---------------------- ----------------------------   -->
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light col-sm-12" style="background-color:#FF99">
+                  <a class="navbar-brand" href="#">nGEvents</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                <a class="nav-link" href="./EventDetails.html">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./AddEvent.html">Add Event</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </li>
+                              
+                        </ul>
+                      
+                        <form class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                      
+                  </div>
+            </nav>
+            </div>
+<!--- -- --------------------------------   NAVBAR  ENDS   ------------------------------------------------------   -->
+            
+            <div ng-controller="EditEventController" style="padding-left:20px;padding-right:20px">
+                <div class="container">
+                    <h2>New Event</h2>
+                    <hr>
+                    
+                    <form id="createEventForm" name="newEventForm">
+                        <fieldset>
+                            <label for="eventName">Event Name :-</label>
+                            <input type="text" id="eventName" required ng-model="event.name" placeholder="Event Name">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventDate">Event Date :-</label>
+                            <input type="text" id="eventDate" ng-required="/\d\d/\d\d/\d\d\d\d/"  ng-model="event.date" placeholder="Event Date">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventTime">Event Time :-</label>
+                            <input type="text" id="eventTime" ng-model="event.time" placeholder="Event Time">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventLocation">Event Location :-</label>
+                            <input type="text" id="eventLocation" ng-model="event.location.address" placeholder="Event Location">
+                            
+                            <input id="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="city">
+                            <input id="eventProvince" type="text" class="input-small" ng-model="event.location.province" style="margin-left:25%" placeholder="province">
+                        </fieldset>
+                        <fieldset>
+                            <label for="imgURL">Image URL :-</label>
+                            <input type="text" id="imgURL" ng-model="event.imageURL" placeholder="Event Location">
+                        </fieldset>
+                        <div style="width:87.5%;float:right">
+                            <button type="submit" ng-disabled="newEventForm.$invalid" class="btn btn-primary" ng-click="saveEvent(event,newEventForm)">Save</button>
+                            <button type="button" class="btn btn-primary" ng-click="cancelEvent()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/EventController.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/controllers/EditEventController.js"></script>
+    </body>
+    
+
+</html>
