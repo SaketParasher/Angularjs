@@ -7,6 +7,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css"> 
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        
+        <style>
+            input.ng-invalid-required{
+                background-color: transparent !important;
+            }
+            input.ng-dirty.ng-invalid{
+            background-color:rgb(221, 197, 220)
+                }
+            input.ng-dirty.ng-valid{
+                background-color:rgb(126, 150, 140)
+            }
+            input.ng-invalid-required{
+                background-color: transparent;
+            }
+        
+        </style>
+        
     </head>
     
     <body>
@@ -61,26 +78,26 @@
                     <form id="createEventForm" name="newEventForm">
                         <fieldset>
                             <label for="eventName">Event Name :-</label>
-                            <input type="text" id="eventName" required ng-model="event.name" placeholder="Event Name">
+                            <input type="text" name="eventName" id="eventName" required ng-model="event.name" placeholder="Event Name">
                         </fieldset>
                         <fieldset>
                             <label for="eventDate">Event Date :-</label>
-                            <input type="text" id="eventDate" ng-required="/\d\d/\d\d/\d\d\d\d/"  ng-model="event.date" placeholder="Event Date">
+                            <input type="text" name="eventDate" id="eventDate" ng-pattern="/\d\d/\d\d/\d\d\d\d/" required ng-model="event.date" placeholder="Event Date">
                         </fieldset>
                         <fieldset>
                             <label for="eventTime">Event Time :-</label>
-                            <input type="text" id="eventTime" ng-model="event.time" placeholder="Event Time">
+                            <input type="text" name="eventTime" id="eventTime" ng-model="event.time" placeholder="Event Time">
                         </fieldset>
                         <fieldset>
                             <label for="eventLocation">Event Location :-</label>
-                            <input type="text" id="eventLocation" ng-model="event.location.address" placeholder="Event Location">
+                            <input type="text" name="eventLocation" id="eventLocation" ng-model="event.location.address" placeholder="Event Location">
                             
-                            <input id="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="city">
-                            <input id="eventProvince" type="text" class="input-small" ng-model="event.location.province" style="margin-left:25%" placeholder="province">
+                            <input id="eventCity" name="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="city">
+                            <input id="eventProvince" name="eventProvince" type="text" class="input-small" ng-model="event.location.province" style="margin-left:25%" placeholder="province">
                         </fieldset>
                         <fieldset>
                             <label for="imgURL">Image URL :-</label>
-                            <input type="text" id="imgURL" ng-model="event.imageURL" placeholder="Event Location">
+                            <input type="text" name="imgURL" id="imgURL" ng-model="event.imageURL" placeholder="Event Location">
                         </fieldset>
                         <div style="width:87.5%;float:right">
                             <button type="submit" ng-disabled="newEventForm.$invalid" class="btn btn-primary" ng-click="saveEvent(event,newEventForm)">Save</button>
@@ -99,6 +116,7 @@
         <script src="js/controllers/EventController.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/controllers/EditEventController.js"></script>
+        <script src="js/services/EventDataService.js"></script>
     </body>
     
 

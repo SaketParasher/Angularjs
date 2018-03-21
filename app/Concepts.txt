@@ -26,3 +26,10 @@
 6) orderBy  :- orders the dataset in a particular sequence based on the parameter passed.
 7) limitTo  :- limits the records to a certain number
 8) filter   :- filters a dataset by an expression
+
+
+/***********************************************       SERVICES       ******************************************/
+
+--> Services allows us to encapsulate reusable business logic into an object that can be shared and reused throughout your application.
+--> Allows us to breakup our whole application into smaller pieces.
+--> Dependency Injection ie. we can inject our services into another services and controllers

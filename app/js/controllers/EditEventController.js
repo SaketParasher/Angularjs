@@ -1,8 +1,12 @@
-eventsApp.controller('EditEventController',function EditEventController($scope){
+eventsApp.controller('EditEventController',function EditEventController($scope,eventDataService){
     
     $scope.saveEvent = function(evt,newForm){
         if(newForm.$valid){
-            alert(evt.name+' Saved!!');    
+                eventDataService.saveEvents(newForm).
+                    success(function(data,status,header,config){
+                        console.log(data);
+                        console.log(status);
+                });
         }      
     };
     
