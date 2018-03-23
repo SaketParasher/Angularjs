@@ -1,0 +1,42 @@
+
+        <div class="container" ng-controller="EditEventController" ng-cloak>
+            
+            <div style="padding-left:20px;padding-right:20px">
+                <div class="container">
+                    <h2>New Event</h2>
+                    <hr>
+                    
+                    <form id="createEventForm" name="newEventForm">
+                        <fieldset>
+                            <label for="eventName">Event Name :-</label>
+                            <input type="text" name="eventName" id="eventName" required ng-model="event.name" placeholder="Event Name">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventDate">Event Date :-</label>
+                            <input type="text" name="eventDate" id="eventDate" ng-pattern="/\d\d/\d\d/\d\d\d\d/" required ng-model="event.date" placeholder="Event Date">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventTime">Event Time :-</label>
+                            <input type="text" name="eventTime" id="eventTime" ng-model="event.time" placeholder="Event Time">
+                        </fieldset>
+                        <fieldset>
+                            <label for="eventLocation">Event Location :-</label>
+                            <input type="text" name="eventLocation" id="eventLocation" ng-model="event.location.address" placeholder="Event Location">
+                            
+                            <input id="eventCity" name="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="city">
+                            <input id="eventProvince" name="eventProvince" type="text" class="input-small" ng-model="event.location.province" style="margin-left:25%" placeholder="province">
+                        </fieldset>
+                        <fieldset>
+                            <label for="imgURL">Image URL :-</label>
+                            <input type="text" name="imgURL" id="imgURL" ng-model="event.imageURL" placeholder="Event Location">
+                        </fieldset>
+                        <div style="width:87.5%;float:right">
+                            <button type="submit" ng-disabled="newEventForm.$invalid" class="btn btn-primary" ng-click="saveEvent(event,newEventForm)">Save</button>
+                            <button type="button" class="btn btn-primary" ng-click="cancelEvent()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+       

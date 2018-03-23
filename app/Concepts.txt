@@ -33,3 +33,21 @@
 --> Services allows us to encapsulate reusable business logic into an object that can be shared and reused throughout your application.
 --> Allows us to breakup our whole application into smaller pieces.
 --> Dependency Injection ie. we can inject our services into another services and controllers
+
+1) $http
+2) $resource
+3) $cacheFactory --> used to cache data and can have maximum capacity. If item more than its capacity is added then first item gets removed and item gets                          added in last.
+
+--> angular.element('className or id') is used to select an element same as jquery.
+
+4) $parse --> used to convert a expression into function
+
+
+
+
+
+
+
+
+
+
