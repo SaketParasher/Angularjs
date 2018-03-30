@@ -18,20 +18,3 @@ eventsApp.filter('durationFilter',function(){
     }
     
 });
-
-eventsApp.filter('eventFilter',function(){
-    return function(event,keyword){
-        var eventsArr = [];
-        if(keyword == '')
-            return event;
-        else{
-            for(var i=0;i<event.length;i++){
-                if((event[i].name).toLocaleLowerCase().indexOf(keyword.toLocaleLowerCase()) != -1)
-                    eventsArr.push(event[i]);
-            }
-            return eventsArr;
-        }
-         
-    }
-    
-});

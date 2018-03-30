@@ -32,19 +32,3 @@ input:focus {outline:0;}
     float: left;
     padding:0.2%;
 }
-.cardcontainer{
-    margin-bottom: 1%;
-}
-div.card:hover{
-    background-color: azure;
-}
-a.cardanchor{
-    color:dimgrey;
-}
-a.cardanchor:hover{
-    text-decoration: none;
-}
-
-div.jumbotron{
-    margin-top: 4%;
-}
