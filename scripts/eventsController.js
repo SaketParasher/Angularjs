@@ -3,7 +3,10 @@ var fs = require('fs');
 module.exports.get = function(req,res){
     var event  =  fs.readFileSync('../app/data/event/'+req.params.id+'.json','utf8');
     res.setHeader('Content-Type','application/json');
-    res.send(event);
+    setTimeout(function(){
+        res.send(event);    
+    },3000);
+    
 }
 
 module.exports.save = function(req,res){
@@ -22,7 +25,7 @@ module.exports.getAllEvents = function(req,res){
         console.log('Exception in reading Directory :-> '+e);
     }
     
-    console.log(files);
+    //console.log(files);
     var results = "[";
     
     for(var idx =0;idx<files.length;idx++){

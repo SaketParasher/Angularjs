@@ -19,6 +19,9 @@ eventsApp.filter('durationFilter',function(){
     
 });
 
+// this filter is used to filter all the events based on keywords entered in search text box
+// this eventFilter takes 1st parameter as all the events by default as it is applied to ng-repeat of events in eventList Controller  and second argument is
+// coming from the search textbox which is inside the same controller
 eventsApp.filter('eventFilter',function(){
     return function(event,keyword){
         var eventsArr = [];

@@ -1,11 +1,12 @@
 <div class="jumbotron">
-    <img ng-src="{{event.imageUrl}}">
+    <img ng-src="{{event.imageUrl}}" class="eventImg">
   <h1 class="display-4">{{event.name}}</h1>
   <p class="lead">Date : {{event.date}}</p>
     <p class="lead">Location : {{event.location.address}},{{event.location.city}},{{event.location.province}}</p>
   <hr class="my-4">
  
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">View Sessions</a>
+    <a class="btn btn-primary btn-lg"  role="button" ng-click="reload()">Reload</a>
   </p>
+    
 </div>

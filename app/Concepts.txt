@@ -42,7 +42,18 @@
 
 4) $parse --> used to convert a expression into function
 
+5) $routeProvider --> used to set the routing and is passed as argument to the callback function of config() where all routes are configured.
 
+6) $routeParams  --> used in controller to get the route parameter and while configuring the route then if any param is variable then we write
+                     /events/:eventId . now we can access eventId in controller by using $routeParams.eventId.
+                     
+7) $route      -->  used to get any custom property from the route. And we access that custom property in controller by $route.current.propertyName
+               -->  to get the queryString from routeURL we use $route.current.params.queryVariableName
+               --> we can also use $route.currnt.pathParams.propertyName but pathParams only gives the variables which are part of route URL not                 queryString.
+
+8) resolve  -->  resolve in routing is an object which is used to fetch data by injecting service and which returns a promise then we add that method name 
+                 in the controller and then assign the value of $scope to be equal to that method name. It will hit the route but the controller will not 
+                 execute and page will not get rendered untill data is fetched ie. until that promise is resolved.
 
 
 

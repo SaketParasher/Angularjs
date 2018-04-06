@@ -48,3 +48,7 @@ a.cardanchor:hover{
 div.jumbotron{
     margin-top: 4%;
 }
+
+.eventImg{
+    width:300px; 
+}

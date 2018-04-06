@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.get('/data/event/:id',events.get);
 app.get('/data/event/',events.getAllEvents);
 app.post('/data/event/:id',events.save);
+app.get('*',function(req,res){ res.sendFile(rootpath+'/app/index.html')});
 
 app.listen(3000,()=>{console.log('App listening at 3000')});
 
