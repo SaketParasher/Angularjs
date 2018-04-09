@@ -3,6 +3,8 @@ eventsApp.controller('EventDetailsController',function($scope,eventDataService,$
     
    $scope.event = event;
     
+    console.log(event.sessions);
+    
     $scope.reload = function(){
         $route.reload();
     }

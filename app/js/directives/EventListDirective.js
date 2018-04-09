@@ -1,0 +1,9 @@
+eventsApp.directive('eventlist',function(){
+   return{
+       restrict:'E',
+       scope:{
+           event:"=myevent"
+       },
+       templateUrl:'templates/EventListDirective.html'
+   } 
+});

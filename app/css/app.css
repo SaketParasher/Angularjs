@@ -52,3 +52,9 @@ div.jumbotron{
 .eventImg{
     width:300px; 
 }
+
+div.modal-dialog  button span{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5px;
+}
