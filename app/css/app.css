@@ -58,3 +58,12 @@ div.modal-dialog  button span{
     justify-content: flex-end;
     padding: 0 5px;
 }
+
+div.chevronContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.chevronContainer div svg{
+    cursor: pointer;
+}

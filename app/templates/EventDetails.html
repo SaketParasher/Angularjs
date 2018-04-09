@@ -20,6 +20,27 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
         </button>
+        
+        <fieldset>
+            
+            <label for="level">FilterBy:</label>
+            <select id="level">
+                <option>All</option>
+                <option>Introductory</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+            </select>
+            
+            <label for="level">OrderBy:</label>
+            <select id="level">
+                <option>All</option>
+                <option>Introductory</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+            </select>
+            
+        </fieldset>
+        
       <div ng-repeat="session in event.sessions">
           <div class="row">
               <div class="col-sm-10">
@@ -29,14 +50,15 @@
                   <div class="modal-body">
                     <p>Creator :- {{session.creatorName}}</p>
                     <p>Level :- {{session.level}}</p>
+                    <p>Duration :- {{session.duration | durationFilter}}</p>
                     <p>Abstract :- {{session.abstract}}</p>
                   </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 chevronContainer">
                   <div>
-                      <span class="glyphicon glyphicon-chevron-up"></span>
-                        <span>{{ session.upVoteCount}}</span>
-                      <span class="glyphicon glyphicon-chevron-down"></span>
+                      <div ng-click="upVotecnt(session)"><i class="fas fa-2x fa-angle-up"></i></div>
+                        <div style="display:flex;justify-content:center">{{session.upVoteCount}}</div>
+                      <div ng-click="downVotecnt(session)"><i class="fas fa-2x fa-angle-down"></i></div>
                   </div>
               </div>
           </div>
